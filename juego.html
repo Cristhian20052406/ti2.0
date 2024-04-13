@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guitar Hero-like Game</title>
+  <link rel="stylesheet" href="css/css.css">
+</head>
+
+<body>
+  <div class="column">
+    <div class="score-timer">
+      <table class="score-table">
+        <tr>
+          <th colspan="2">Puntuación</th>
+        </tr>
+        <tr>
+          <td id="score">0</td>
+        </tr>
+      </table>
+      <table class="timer-table">
+        <tr>
+          <th colspan="2">Tiempo restante</th>
+        </tr>
+        <tr>
+          <td id="time-left">00:00</td>
+        </tr>
+      </table>
+      <table class="last-key-table">
+        <tr>
+          <th colspan="2">Última tecla presionada</th>
+        </tr>
+        <tr>
+          <td id="last-key"></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="game-container" id="game-container">
+      <div class="button-container">
+        <div id="button-a" class="button" data-key="65">A</div>
+        <div id="button-s" class="button" data-key="83">S</div>
+        <div id="button-d" class="button" data-key="68">D</div>
+        <div id="button-k" class="button" data-key="75">K</div>
+        <div id="button-l" class="button" data-key="76">L</div>
+        <div id="button-n" class="button" data-key="192">Ñ</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="aciertos">
+      <div class="checkmark" id="checkmark">✔</div>
+      <div class="x-mark" id="x-mark">✘</div>
+    </div>
+  </div>
+
+  <!-- Botón de empezar juego -->
+  <div id="start-button" class="start-button">Empezar de nuevo</div>
+
+  <audio id="audio-correct" src="correct.mp3"></audio>
+  <audio id="audio-game" src="music/Gurenge.mp3"></audio>
+
+  <script src="js/js.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,400 @@
+/* Estilos base */
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  height: 100vh;
+  background-color: #000;
+  font-family: Arial, sans-serif;
+}
+
+.column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  height: 100%;
+
+}
+
+
+
+.game-container {
+  display: flex;
+  flex-direction: column; /* Cambiado a column para ordenar verticalmente en dispositivos móviles */
+  justify-content: center;
+  align-items: center;
+  height: 100%; /* Añadido para ocupar la altura completa */
+}
+
+
+#game-container {
+  position: relative;
+  width: 80%;
+  height: 100%;
+  overflow: hidden;
+  background-color: #111;
+  margin: 10px 10px;
+  animation: shadowAnimation 1s infinite alternate; /* Animación de la sombra */
+  border-radius: 5%;
+}
+
+@keyframes shadowAnimation {
+  from {
+    box-shadow: 0 0 20px rgba(102, 234, 87, 0.5); /* Sombras iniciales */
+  }
+  to {
+    box-shadow: 0 0 40px rgba(84, 255, 190, 0.8); /* Sombras finales */
+  }
+}
+
+
+
+
+
+
+@keyframes rotateNote {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.button-container {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  border-top: #ffffff solid;
+}
+
+.button {
+  width: 40px;
+  height: 30px;
+  border: 1px solid #fff;
+  background-color: #333;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 18px;
+  border-radius: 40%;
+  margin-top: 20px;
+}
+
+.button:hover {
+  background-color: #555;
+}
+
+.pressed {
+  background-color: rgb(52, 246, 52) !important;
+  color: #000;
+}
+
+.score-timer,
+.aciertos {
+  margin: 20px auto;
+}
+
+.score-table,
+.timer-table,
+.last-key-table {
+  border: 2px solid #fff;
+  padding: 10px;
+  width: 200px;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.last-key-table {
+  margin-top: 0;
+}
+
+.checkmark,
+.x-mark {
+  display: none;
+  font-size: 80px;
+  color: #52cc52; /* checkmark color */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: pulse 1s infinite; /* pulsating animation */
+}
+
+.x-mark {
+  color: #ff3333; /* x-mark color */
+}
+
+@keyframes pulse {
+  0% {
+    transform: translate(-50%, -50%) scale(0.9);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(0.9);
+  }
+}
+
+/* Añadimos estilos para el botón de empezar juego */
+#start-button {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px 30px;
+  background-color: #333;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+  border: 2px solid #fff;
+  transition: background-color 0.3s;
+  z-index: 2;
+}
+
+#start-button:hover {
+  background-color: #555;
+}
+
+/* Media Query para pantallas pequeñas */
+@media only screen and (max-width: 600px) {
+  .column {
+    flex: 1; /* Ajustado para ocupar todo el ancho en dispositivos móviles */
+    height: auto; /* Ajustado para que cada columna tome la altura según su contenido */
+  }
+  
+  .game-container {
+    flex-direction: column; /* Cambiado a column para ordenar verticalmente en dispositivos móviles */
+  }
+  
+  #game-container {
+    width: 100%; /* Cambiado a 100% para ocupar todo el ancho en dispositivos móviles */
+  }
+}
+.button-wrapper {
+  position: relative;
+}
+
+
+
+.acierto-icon {
+  color: green; /* Color de la marca de acierto */
+}
+
+.fallo-icon {
+  color: red; /* Color de la marca de fallo */
+}
+/* Estilos base */
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  height: 100vh;
+  background-color: #000;
+  font-family: Arial, sans-serif;
+}
+
+.column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  height: 100%;
+}
+
+.game-container {
+  position: relative;
+  width: 80%;
+  height: 100%;
+  overflow: hidden;
+  background-color: #111;
+  margin: 10px 10px;
+  animation: shadowAnimation 1s infinite alternate;
+  border-radius: 5%;
+}
+
+@keyframes shadowAnimation {
+  from {
+    box-shadow: 0 0 20px rgba(102, 234, 87, 0.5);
+  }
+  to {
+    box-shadow: 0 0 40px rgba(84, 255, 190, 0.8);
+  }
+}
+
+
+
+.button-container {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  border-top: #ffffff solid;
+  padding: 20px;
+  padding-bottom: 0;
+  padding-top: 0;
+}
+
+.button {
+  width: 50px;
+  height: 30px;
+  border: 1px solid #fff;
+  background-color: #333;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 18px;
+  border-radius: 40%;
+  padding: 2px;
+}
+
+.button:hover {
+  background-color: #555;
+}
+
+.pressed {
+  background-color: rgb(52, 246, 52) !important;
+  color: #000;
+}
+
+.score-timer,
+.aciertos {
+  margin: 20px auto;
+}
+
+.score-table,
+.timer-table,
+.last-key-table {
+  border: 2px solid #fff;
+  padding: 10px;
+  width: 200px;
+  text-align: center;
+}
+
+.last-key-table {
+  margin-top: 0;
+}
+
+.checkmark,
+.x-mark {
+  display: none;
+  font-size: 80px;
+  color: #52cc52;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: pulse 1s infinite;
+}
+
+.x-mark {
+  color: #ff3333;
+}
+
+@keyframes pulse {
+  0% {
+    transform: translate(-50%, -50%) scale(0.9);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(0.9);
+  }
+}
+
+/* Añadimos estilos para el botón de empezar juego */
+#start-button {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px 30px;
+  background-color: #333;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+  border: 2px solid #fff;
+  transition: background-color 0.3s;
+  z-index: 2;
+}
+
+#start-button:hover {
+  background-color: #555;
+}
+
+/* Media Query para pantallas pequeñas */
+@media only screen and (max-width: 600px) {
+  .game-container {
+    width: 100%;
+  }
+}
+.note {
+  position: absolute;
+  width: 30px;
+  height: 10px;
+  border: 1px solid #ffffff;
+  transition: top 0.05s linear;
+  border-radius: 30%;
+}
+
+/* Ajuste para centrar las notas en los botones */
+.note {
+  left: calc(50% + 5px); /* Centra horizontalmente */
+}
+
+/* Ajuste para que las notas caigan al centro de los botones */
+.note {
+  transform: translateX(-60%);
+}
+
+.note {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border: 1px solid #ffffff;
+  transition: top 0.05s linear;
+  border-radius: 30%;
+  left: 0; /* Ajuste inicial */
+}
+
+/* Ajuste para centrar las notas en los botones */
+.note {
+  transform: translateX(-50%);
+}
+
+/* Ajuste para que las notas caigan al centro de los botones */
+.note {
+  left: calc(50% - 5px); /* Centra horizontalmente */
+}
+.note {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #ffffff;
+  transition: top 0.05s linear;
+  border-radius: 30%;
+}.fadeOut {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+.note {
+  position: absolute;
+  width: 20px;
+  height: 10px;
+  border: 1px solid #ffffff;
+  transition: top 0.15s linear;
+  border-radius: 10%;
+}
